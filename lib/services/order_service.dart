@@ -1,4 +1,4 @@
-import 'order_model.dart';
+import '../models/order_model.dart';
 
 class OrderService {
   final List<OrderModel> _orders = [];

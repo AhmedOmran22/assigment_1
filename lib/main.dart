@@ -1,6 +1,6 @@
-import 'order_model.dart';
-import 'order_service.dart';
-import 'drink_model.dart';
+import 'models/order_model.dart';
+import 'services/order_service.dart';
+import 'models/drink_model.dart';
 
 void main() {
   final service = OrderService();
