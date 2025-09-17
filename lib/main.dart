@@ -3,7 +3,7 @@ import 'services/order_service.dart';
 import 'models/drink_model.dart';
 
 void main() {
-  final service = OrderService();
+  final orderRepo = OrderService();
 
   final order1 = OrderModel(
     drinks: [TurkishCoffee(), Tea()],
@@ -17,10 +17,10 @@ void main() {
     instructions: "Extra hot",
   );
 
-  service.addOrder(order1);
-  service.addOrder(order2);
+  orderRepo.addOrder(order1);
+  orderRepo.addOrder(order2);
 
-  service.markOrderCompleted(order1);
+  orderRepo.markOrderCompleted(order1);
 
-  service.generateReport();
+  orderRepo.generateReport();
 }

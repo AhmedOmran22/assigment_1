@@ -1,13 +1,17 @@
+import 'package:assigment_1/repo/oreder_repo.dart';
+
 import '../models/order_model.dart';
 
-class OrderService {
+class OrderService implements OrderRepo {
   final List<OrderModel> _orders = [];
 
+  @override
   void addOrder(OrderModel order) {
     _orders.add(order);
     print("✅ Order added for ${order.customerName}");
   }
 
+  @override
   void markOrderCompleted(OrderModel order) {
     final index = _orders.indexOf(order);
     if (index != -1) {
@@ -18,6 +22,7 @@ class OrderService {
     }
   }
 
+  @override
   void listOrders() {
     if (_orders.isEmpty) {
       print("📭 No orders yet.");
@@ -32,6 +37,7 @@ class OrderService {
     }
   }
 
+  @override
   void updateOrder(OrderModel order) {
     final index = _orders.indexOf(order);
     if (index != -1) {
@@ -46,10 +52,12 @@ class OrderService {
     }
   }
 
+  @override
   List<OrderModel> getCompletedOrders() => _orders
       .where((orderModel) => orderModel.status == OrderStatus.completed)
       .toList();
 
+  @override
   List<MapEntry<String, int>> getTopSellingDrinks() {
     final Map<String, int> drinkCount = {};
     final orders = getCompletedOrders();
@@ -66,6 +74,7 @@ class OrderService {
     return drinkCount.entries.where((e) => e.value == maxCount).toList();
   }
 
+  @override
   void generateReport() {
     final Map<String, int> drinkCount = {};
     final completedOrders = getCompletedOrders();
