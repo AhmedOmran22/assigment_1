@@ -3,13 +3,13 @@ import 'drink_model.dart';
 class OrderModel {
   List<DrinkModel> drinks;
   String customerName;
-  String instructions;
+  String? instructions;
   OrderStatus status;
 
   OrderModel({
     required this.drinks,
     required this.customerName,
-    required this.instructions,
+    this.instructions,
     this.status = OrderStatus.pending,
   });
 
