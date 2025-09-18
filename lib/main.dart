@@ -6,13 +6,13 @@ void main() {
   final orderRepo = OrderService();
 
   final order1 = OrderModel(
-    drinks: [TurkishCoffee(), Tea()],
+    drinks: [TurkishCoffee(), Shai()],
     customerName: "Omar",
     instructions: "No sugar",
   );
 
   final order2 = OrderModel(
-    drinks: [HibiscusTea(), Tea()],
+    drinks: [HibiscusTea(), Shai()],
     customerName: "Ahmed",
     instructions: "Extra hot",
   );

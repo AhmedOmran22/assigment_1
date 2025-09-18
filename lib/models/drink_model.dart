@@ -1,4 +1,3 @@
-
 abstract class DrinkModel {
   String get name;
 }
@@ -13,7 +12,7 @@ class HibiscusTea implements DrinkModel {
   String get name => "Hibiscus Tea";
 }
 
-class Tea implements DrinkModel {
+class Shai implements DrinkModel {
   @override
   String get name => "Shai";
 }
